@@ -17,32 +17,33 @@ def calculate(string):
 
     tokens_num = []
     for item in tokens[1:]:
-        tokens_num.append(float(item))
+        tokens_num.append(int(item))
 
     # Evaluate - Performs proper arithmetic function based upon operator.
     if tokens[0] == "+":
-        return add(tokens_num)
+        # return add(tokens_num[0], tokens_num[1])
+        return "{:.2f}".format(reduce(add, tokens_num))
 
     if tokens[0] == "-":
-        return subtract(tokens_num[0], tokens_num[1])
+        return "{:.2f}".format(reduce(subtract, tokens_num))
 
     if tokens[0] == "*":
-        return multiply(tokens_num[0], tokens_num[1]) 
+        return "%.2f" %(reduce(multiply, tokens_num)) 
 
     if tokens[0] == "/":
-        return divide(tokens_num[0], tokens_num[1])
+        return "{:.2f}".format(reduce(divide, tokens_num))
 
     if tokens[0] == "square":
-        return square(tokens_num[0])
+        return "{:.2f}".format(square(tokens_num[0]))
 
     if tokens[0] == "cube":
-        return cube(tokens_num[0])
+        return "{:.2f}".format(cube(tokens_num[0]))
 
     if tokens[0] == "pow":
-        return power(tokens_num[0], tokens_num[1])
+        return "{:.2f}".format(reduce(power, tokens_num))
 
     if tokens[0] == "mod":
-        return mod(tokens_num[0], tokens_num[1])
+        return "{:.2f}".format(reduce(mod, tokens_num))
 
     if tokens[0] == "q":
         return
