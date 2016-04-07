@@ -14,31 +14,37 @@ def calculate(string):
     """Takes string, tokenizes it to calculate it appropriately"""
     # Read - Takes string, splits it into parts.
     tokens = string.split(" ")
+
+    tokens_num = []
+    for item in tokens[1:]:
+        tokens_num.append(float(item))
+
     # Evaluate - Performs proper arithmetic function based upon operator.
     if tokens[0] == "+":
-        return add(tokens[1],tokens[2])
+        return add(tokens_num[0], tokens_num[1])
 
     if tokens[0] == "-":
-        return subtract(tokens[1], tokens[2])
+        return subtract(tokens_num[0], tokens_num[1])
 
     if tokens[0] == "*":
-        return multiply(tokens[1], tokens[2])  
+        return multiply(tokens_num[0], tokens_num[1]) 
 
     if tokens[0] == "/":
-        return divide(tokens[1], tokens[2])
+        return divide(tokens_num[0], tokens_num[1])
 
     if tokens[0] == "square":
-        return square(tokens[1])
+        return square(tokens_num[0])
 
     if tokens[0] == "cube":
-        return cube(tokens[1])
+        return cube(tokens_num[0])
 
     if tokens[0] == "pow":
-        return power(tokens[1], tokens[2])
+        return power(tokens_num[0], tokens_num[1])
 
     if tokens[0] == "mod":
-        return mod(tokens[1], tokens[2])
+        return mod(tokens_num[0], tokens_num[1])
 
     if tokens[0] == "q":
         return
 
+print calculate(raw_input("What would you like to calculate?"))
