@@ -21,7 +21,7 @@ def calculate(string):
 
     # Evaluate - Performs proper arithmetic function based upon operator.
     if tokens[0] == "+":
-        return add(tokens_num[0], tokens_num[1])
+        return add(tokens_num)
 
     if tokens[0] == "-":
         return subtract(tokens_num[0], tokens_num[1])
